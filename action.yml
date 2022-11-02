@@ -1,0 +1,6 @@
+name: "cloudfront"
+description: "cloudfront a directory to an AWS S3 repository"
+author: suriya
+runs:
+  using: docker
+  image: Dockerfile
