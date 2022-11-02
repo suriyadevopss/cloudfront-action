@@ -27,5 +27,8 @@ if [ -z "$AWS_REGION" ]; then
   AWS_REGION="us-east-1"
 fi
 
+SOURCE_PATH=${SOURCE_PATH:-/*}
 
-sh -c "aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths '/*' "
+# sh -c "aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths '/*' "
+
+sh -c "aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths '${SOURCE_PATH}' "
